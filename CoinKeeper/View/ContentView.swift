@@ -14,14 +14,17 @@ struct ContentView: View {
                 .tabItem {
                     Label("Balance", systemImage: "wallet.pass")
                 }
+                .tag(1)
             ExpenseView()
                 .tabItem {
                     Label("New purchase", systemImage: "cart.fill.badge.plus")
                 }
+                .tag(2)
             IncomeView()
                 .tabItem {
                     Label("Income", systemImage: "banknote.fill")
                 }
+                .tag(3)
         }
     }
 }

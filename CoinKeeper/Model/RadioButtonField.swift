@@ -27,7 +27,8 @@ struct RadioButtonField: View {
             textSize: CGFloat = 14,
             isMarked: Bool = false,
             callback: @escaping (String)->()
-            ) {
+            )
+    {
             self.id = id
             self.label = label
             self.size = size
@@ -41,15 +42,17 @@ struct RadioButtonField: View {
         Button(action:{
                   self.callback(self.id)
               }) {
-                  HStack(alignment: .center, spacing: 10) {
+                  HStack {
+                      Text(label)
+                          .font(Font.system(size: textSize))
+                      Spacer()
                       Image(systemName: self.isMarked ? "largecircle.fill.circle" : "circle")
                           .renderingMode(.original)
                           .resizable()
                           .aspectRatio(contentMode: .fit)
                           .frame(width: self.size, height: self.size)
-                      Text(label)
-                          .font(Font.system(size: textSize))
-                      Spacer()
+                  
+                     
                   }.foregroundColor(self.color)
               }
               .foregroundColor(Color.white)

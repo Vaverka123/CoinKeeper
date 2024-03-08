@@ -17,7 +17,8 @@
 		4D5365632B95CDB300613393 /* IncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5365622B95CDB300613393 /* IncomeView.swift */; };
 		4D5365652B95CDC500613393 /* ExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5365642B95CDC500613393 /* ExpenseView.swift */; };
 		4D53656A2B95EAE000613393 /* RadioButtonField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5365692B95EAE000613393 /* RadioButtonField.swift */; };
-		4D53656C2B95ED0600613393 /* ExpenseGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D53656B2B95ED0600613393 /* ExpenseGroup.swift */; };
+		4D53656C2B95ED0600613393 /* ExpenseCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D53656B2B95ED0600613393 /* ExpenseCategoryModel.swift */; };
+		4D5365A42B97129600613393 /* ExpenseGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5365A32B97129600613393 /* ExpenseGroupViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +33,8 @@
 		4D5365622B95CDB300613393 /* IncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeView.swift; sourceTree = "<group>"; };
 		4D5365642B95CDC500613393 /* ExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseView.swift; sourceTree = "<group>"; };
 		4D5365692B95EAE000613393 /* RadioButtonField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonField.swift; sourceTree = "<group>"; };
-		4D53656B2B95ED0600613393 /* ExpenseGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseGroup.swift; sourceTree = "<group>"; };
+		4D53656B2B95ED0600613393 /* ExpenseCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCategoryModel.swift; sourceTree = "<group>"; };
+		4D5365A32B97129600613393 /* ExpenseGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseGroupViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				4D5365692B95EAE000613393 /* RadioButtonField.swift */,
-				4D53656B2B95ED0600613393 /* ExpenseGroup.swift */,
+				4D53656B2B95ED0600613393 /* ExpenseCategoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -95,6 +97,7 @@
 		4D5365672B95CE8B00613393 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4D5365A32B97129600613393 /* ExpenseGroupViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -184,10 +187,11 @@
 			files = (
 				4D53654F2B95CACD00613393 /* ContentView.swift in Sources */,
 				4D5365632B95CDB300613393 /* IncomeView.swift in Sources */,
+				4D5365A42B97129600613393 /* ExpenseGroupViewModel.swift in Sources */,
 				4D53655D2B95CB1100613393 /* ExpenseCategoryView.swift in Sources */,
 				4D5365652B95CDC500613393 /* ExpenseView.swift in Sources */,
 				4D53654D2B95CACD00613393 /* CoinKeeperApp.swift in Sources */,
-				4D53656C2B95ED0600613393 /* ExpenseGroup.swift in Sources */,
+				4D53656C2B95ED0600613393 /* ExpenseCategoryModel.swift in Sources */,
 				4D5365612B95CB5200613393 /* BalanceView.swift in Sources */,
 				4D53656A2B95EAE000613393 /* RadioButtonField.swift in Sources */,
 				4D53655F2B95CB2800613393 /* IncomeCategoryView.swift in Sources */,
