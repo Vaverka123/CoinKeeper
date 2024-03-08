@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-//MARK:- Single Radio Button Field
 struct RadioButtonField: View {
     
         let id: String

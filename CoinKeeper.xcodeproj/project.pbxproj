@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0906882B9B194600672E66 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0906872B9B194600672E66 /* DescriptionView.swift */; };
+		4D09068A2B9B1CEC00672E66 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0906892B9B1CEC00672E66 /* DateView.swift */; };
+		4D09068C2B9B1F9B00672E66 /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09068B2B9B1F9B00672E66 /* AmountView.swift */; };
+		4D09068E2B9B25EA00672E66 /* AmountVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D09068D2B9B25EA00672E66 /* AmountVM.swift */; };
 		4D53654D2B95CACD00613393 /* CoinKeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D53654C2B95CACD00613393 /* CoinKeeperApp.swift */; };
 		4D53654F2B95CACD00613393 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D53654E2B95CACD00613393 /* ContentView.swift */; };
 		4D5365512B95CACF00613393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D5365502B95CACF00613393 /* Assets.xcassets */; };
@@ -22,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D0906872B9B194600672E66 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		4D0906892B9B1CEC00672E66 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		4D09068B2B9B1F9B00672E66 /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
+		4D09068D2B9B25EA00672E66 /* AmountVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountVM.swift; sourceTree = "<group>"; };
 		4D5365492B95CACD00613393 /* CoinKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D53654C2B95CACD00613393 /* CoinKeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinKeeperApp.swift; sourceTree = "<group>"; };
 		4D53654E2B95CACD00613393 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				4D5365A32B97129600613393 /* ExpenseGroupViewModel.swift */,
+				4D09068D2B9B25EA00672E66 /* AmountVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -105,12 +114,15 @@
 		4D5365682B95CE9700613393 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4D5365602B95CB5200613393 /* BalanceView.swift */,
 				4D53654E2B95CACD00613393 /* ContentView.swift */,
+				4D5365602B95CB5200613393 /* BalanceView.swift */,
 				4D5365642B95CDC500613393 /* ExpenseView.swift */,
-				4D53655C2B95CB1100613393 /* ExpenseCategoryView.swift */,
 				4D5365622B95CDB300613393 /* IncomeView.swift */,
+				4D53655C2B95CB1100613393 /* ExpenseCategoryView.swift */,
 				4D53655E2B95CB2800613393 /* IncomeCategoryView.swift */,
+				4D0906872B9B194600672E66 /* DescriptionView.swift */,
+				4D0906892B9B1CEC00672E66 /* DateView.swift */,
+				4D09068B2B9B1F9B00672E66 /* AmountView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,8 +202,12 @@
 				4D5365A42B97129600613393 /* ExpenseGroupViewModel.swift in Sources */,
 				4D53655D2B95CB1100613393 /* ExpenseCategoryView.swift in Sources */,
 				4D5365652B95CDC500613393 /* ExpenseView.swift in Sources */,
+				4D09068C2B9B1F9B00672E66 /* AmountView.swift in Sources */,
 				4D53654D2B95CACD00613393 /* CoinKeeperApp.swift in Sources */,
+				4D09068A2B9B1CEC00672E66 /* DateView.swift in Sources */,
+				4D09068E2B9B25EA00672E66 /* AmountVM.swift in Sources */,
 				4D53656C2B95ED0600613393 /* ExpenseCategoryModel.swift in Sources */,
+				4D0906882B9B194600672E66 /* DescriptionView.swift in Sources */,
 				4D5365612B95CB5200613393 /* BalanceView.swift in Sources */,
 				4D53656A2B95EAE000613393 /* RadioButtonField.swift in Sources */,
 				4D53655F2B95CB2800613393 /* IncomeCategoryView.swift in Sources */,

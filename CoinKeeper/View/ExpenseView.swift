@@ -10,28 +10,33 @@ import Combine
 
 struct ExpenseView: View {
     
-    @State private var descriptionInput = ""
+    @State private var date = Date()
+    @State private var amount = ""
     @State private var selectedCategory = ""
+    @State private var descriptionInput = ""
     
     var body: some View {
         NavigationView{
             List {
                 //Date, select date in calendar, select time on clock
-                
+               DateView(date: $date)
+                  
                 // Amount, input double or navigate to calculator
                 
-                // Description, optional input string
-                VStack(alignment: .leading) {
-                    Text("Description:")
-                    TextField("Give some details", text: $descriptionInput)
-                }
+                AmountView(amount: $amount)
+                
+               
                 // Category, choose category
                 
                 NavigationLink(
                     destination: ExpenseCategoryView(selectedCategory: $selectedCategory)) {
                             Text("Category: \(selectedCategory)")
-                        }
-                
+                    } 
+                // Description, optional input string
+                               
+                               DescriptionView(descriptionInput: $descriptionInput)
+                           
+        
 
             }
             .navigationTitle("Add expense")
