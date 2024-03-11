@@ -10,7 +10,6 @@ import Combine
 
 struct AmountView: View {
     
-   // @ObservedObject var amount = NumbersOnly()
     @Binding var amount: String
 
     var body: some View {

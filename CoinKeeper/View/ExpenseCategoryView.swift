@@ -16,9 +16,16 @@ struct ExpenseCategoryView: View {
   
     var body: some View {
         VStack {
-            ExpenseGroupViewModel(selectedCategory: $selectedCategory) { selected in
-                print ("Selected expense category is: \(selected)")
-            }
+            CategoryGroupViewModel(
+                selectedCategory: $selectedCategory,
+                callback: { selected in
+                    print ("Selected expense category is: \(selected)"
+                    )},
+                categories: ExpenseCategoryModel.allCases.map { $0.rawValue },
+                systemImageNames: ExpenseCategoryModel.allCases.map {
+                    $0.systemImageName
+                }
+            )
         }.padding(20)
         .navigationTitle("Select category")
                        

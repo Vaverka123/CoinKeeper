@@ -15,17 +15,13 @@ struct ContentView: View {
                     Label("Balance", systemImage: "wallet.pass")
                 }
                 .tag(1)
-            ExpenseView()
+
+            TransactionView()
                 .tabItem {
-                    Label("New purchase", systemImage: "cart.fill.badge.plus")
+                    Label("Transaction", systemImage: "plus.circle")
                 }
                 .tag(2)
-            IncomeView()
-                .tabItem {
-                    Label("Income", systemImage: "banknote.fill")
-                }
-                .tag(3)
-        }
+       }
     }
 }
 

@@ -20,7 +20,7 @@ enum ExpenseCategoryModel: String, CaseIterable {
     
     var systemImageName: String {
         switch self {
-        case .bills: return "dollarsign.circle"
+        case .bills: return "lightbulb.max.fill"
         case .gifts: return "gift"
         case .education: return "book"
         case .travel: return "airplane"
