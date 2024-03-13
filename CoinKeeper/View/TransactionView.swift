@@ -14,36 +14,47 @@ struct TransactionView: View {
     @State private var amount = ""
     @State private var descriptionInput = ""
     
+    @ObservedObject var transactionStore: TransactionStore
+
+    
     var body: some View {
-        
-            NavigationView{
-                List {
-                    DateView(date: $date)
-                    AmountView(amount: $amount)
-                    NavigationLink(
-                        destination: SelectCategoryView(selectedCategory: $selectedCategory)) {
-                                Text("Category: \(selectedCategory)")
-                        }
-                    DescriptionView(descriptionInput: $descriptionInput)
- 
-                }
-                .navigationTitle("Add transaction")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar(content: {
-                    ToolbarItemGroup(placement: .topBarTrailing) {
-                        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                            Text("Save")
-                        })
+        NavigationView {
+            List {
+                DateView(date: $date)
+                AmountView(amount: $amount)
+                NavigationLink (
+                    destination: SelectCategoryView(selectedCategory: $selectedCategory)) {
+                        Text("Category: \(selectedCategory)")
                     }
-                })
+                DescriptionView(descriptionInput: $descriptionInput)
+            }
+            .navigationTitle("Add transaction")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItemGroup(placement: .topBarTrailing) {
+                    Button(action: {
+                        let newTransaction = Transaction(id: UUID(), date: date, amount: amount, category: selectedCategory, description: descriptionInput)
+                        print(newTransaction)
+                            transactionStore.transactions.append(newTransaction)
+                        print(transactionStore.transactions)
+                        date = .now
+                        amount = ""
+                        selectedCategory = ""
+                        descriptionInput = ""
+                    }) {
+                        Text("Save")
+                    }
+                }
             }
         }
     }
+}
+    
+let transactionStore = TransactionStore()
 
 
 #Preview {
-    NavigationView{
-        TransactionView()
+    TransactionView(transactionStore: TransactionStore())
     }
-}
+
 

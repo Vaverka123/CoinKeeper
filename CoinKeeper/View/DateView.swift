@@ -13,7 +13,7 @@ struct DateView: View {
     
     var body: some View {
         DatePicker(
-            "Date",
+            "Date: ",
             selection: $date,
             displayedComponents: [.date, .hourAndMinute])
     }

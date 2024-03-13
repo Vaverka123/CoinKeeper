@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct CategoryGroupViewModel: View {
+struct CategoryGroupVM: View {
     
     @Binding var selectedCategory: String
     let callback: (String) -> ()

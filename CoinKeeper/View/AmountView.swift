@@ -14,7 +14,7 @@ struct AmountView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Amount")
+            Text("Amount: ")
             TextField("Enter amount", text: $amount)
                 .keyboardType(.decimalPad)
                 .onReceive(Just(amount)) { newValue in

@@ -14,10 +14,10 @@ struct IncomeCategoryView: View {
     var body: some View {
             
         VStack {
-            CategoryGroupViewModel(
+            CategoryGroupVM(
                 selectedCategory: $selectedCategory,
                 callback: { selected in
-                    print ("Selected expense category is: \(selected)"
+                    print ("Selected income category is: \(selected)"
                         )},
                 categories: IncomeCategoryModel.allCases.map { $0.rawValue },
                 systemImageNames: IncomeCategoryModel.allCases.map {

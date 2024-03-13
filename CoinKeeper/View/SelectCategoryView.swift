@@ -10,7 +10,7 @@ import SwiftUI
 struct SelectCategoryView: View {
     
     @Binding var selectedCategory: String
-    @State private var selectedView = 0
+    @State private var selectedView = 1
     
     var body: some View {
             VStack {
@@ -18,7 +18,6 @@ struct SelectCategoryView: View {
                     Text("Expense").tag(0)
                     Text("Income").tag(1)
                 }
-               // .pickerStyle(SegmentedPickerStyle())
                 .pickerStyle(SegmentedPickerStyle())
                 
                 if selectedView == 0 {
