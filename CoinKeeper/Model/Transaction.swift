@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Transaction: Identifiable, Hashable {
+struct Transaction: Identifiable {
     var id: UUID
     var date: Date
     var amount: String

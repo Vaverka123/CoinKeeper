@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct IncomeCategoryView: View {
         
@@ -14,13 +15,14 @@ struct IncomeCategoryView: View {
     var body: some View {
             
         VStack {
-            CategoryGroupVM(
+                
+            CategoryGroupViewModel(
                 selectedCategory: $selectedCategory,
                 callback: { selected in
-                    print ("Selected income category is: \(selected)"
+                    print ("Selected expense category is: \(selected)"
                         )},
-                categories: IncomeCategoryModel.allCases.map { $0.rawValue },
-                systemImageNames: IncomeCategoryModel.allCases.map {
+                categories: ExpenseCategoryModel.allCases.map { $0.rawValue },
+                systemImageNames: ExpenseCategoryModel.allCases.map {
                         $0.systemImageName
                     }
                 )

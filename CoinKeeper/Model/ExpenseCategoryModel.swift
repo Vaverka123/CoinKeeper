@@ -9,7 +9,6 @@ import SwiftUI
 
 enum ExpenseCategoryModel: String, CaseIterable {
     
-    case shopping = "Shopping"
     case bills = "Bills"
     case gifts = "Gifts"
     case education = "Education"
@@ -17,7 +16,8 @@ enum ExpenseCategoryModel: String, CaseIterable {
     case health = "Health"
     case entertainment = "Entertainment"
     case cafe = "Cafe"
-    
+    case shopping = "Shopping"
+
     var systemImageName: String {
         switch self {
         case .bills: return "lightbulb.max.fill"

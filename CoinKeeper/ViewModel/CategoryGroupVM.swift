@@ -6,9 +6,9 @@
 //
 
 import SwiftUI
+import Combine
 
-
-struct CategoryGroupVM: View {
+struct CategoryGroupViewModel: View {
     
     @Binding var selectedCategory: String
     let callback: (String) -> ()
@@ -20,7 +20,7 @@ struct CategoryGroupVM: View {
         VStack {
             ForEach(0..<categories.count, id: \.self) { index in
                            radioButton(for: index)
-                    }
+                       }
                 }
             }
 

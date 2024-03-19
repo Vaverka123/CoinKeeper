@@ -8,7 +8,6 @@
 import SwiftUI
 import Combine
 
-
 struct DescriptionView: View {
     
     @Binding var descriptionInput: String

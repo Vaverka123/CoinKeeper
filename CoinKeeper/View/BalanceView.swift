@@ -6,18 +6,25 @@
 //
 
 import SwiftUI
+import Combine
 
 struct BalanceView: View {
     
     @ObservedObject var transactionStore: TransactionStore
  
     var body: some View {
-        List(transactionStore.transactions) { transaction in
-            HStack() {
+        NavigationView {
+            List(transactionStore.transactions) { transaction in
+                HStack() {
                     Text(transaction.date, style: .date)
                     Text(transaction.category)
+                    Spacer()
                     Text(transaction.amount)
+                }
             }
+            .navigationTitle("Report")
+            .navigationBarTitleDisplayMode(.inline)
+            //add button to go to settings view
         }
     }
 }

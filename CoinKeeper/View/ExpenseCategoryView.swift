@@ -16,7 +16,7 @@ struct ExpenseCategoryView: View {
   
     var body: some View {
         VStack {
-            CategoryGroupVM(
+            CategoryGroupViewModel(
                 selectedCategory: $selectedCategory,
                 callback: { selected in
                     print ("Selected expense category is: \(selected)"
