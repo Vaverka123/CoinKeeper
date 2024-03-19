@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         TabView {
-            BalanceView()
+            BalanceView(transactionStore: transactionStore)
                 .tabItem {
                     Label("Balance", systemImage: "wallet.pass")
                 }
-            ExpenseView()
+                .tag(0)
+
+            TransactionView(transactionStore: transactionStore)
                 .tabItem {
-                    Label("New purchase", systemImage: "cart.fill.badge.plus")
+                    Label("Transaction", systemImage: "plus.circle")
                 }
-            IncomeView()
-                .tabItem {
-                    Label("Income", systemImage: "banknote.fill")
-                }
-        }
+                .tag(1)
+       }
     }
 }
 

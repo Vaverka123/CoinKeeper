@@ -6,13 +6,34 @@
 //
 
 import SwiftUI
+import Combine
 
 struct IncomeCategoryView: View {
+        
+    @Binding var selectedCategory: String
+      
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            
+        VStack {
+                
+            CategoryGroupViewModel(
+                selectedCategory: $selectedCategory,
+                callback: { selected in
+                    print ("Selected expense category is: \(selected)"
+                        )},
+                categories: ExpenseCategoryModel.allCases.map { $0.rawValue },
+                systemImageNames: ExpenseCategoryModel.allCases.map {
+                        $0.systemImageName
+                    }
+                )
+            }.padding(20)
+            .navigationTitle("Select category")
+                           
+            Spacer()
+        }
     }
-}
+
 
 #Preview {
-    IncomeCategoryView()
+    IncomeCategoryView(selectedCategory: .constant("Salary"))
 }

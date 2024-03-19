@@ -2,17 +2,33 @@
 //  BalanceView.swift
 //  CoinKeeper
 //
-//  Created by Vera Maslava on 04/03/2024.
+//  Created by Vera Maslava on 13/03/2024.
 //
 
 import SwiftUI
+import Combine
 
 struct BalanceView: View {
+    
+    @ObservedObject var transactionStore: TransactionStore
+ 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List(transactionStore.transactions) { transaction in
+                HStack() {
+                    Text(transaction.date, style: .date)
+                    Text(transaction.category)
+                    Spacer()
+                    Text(transaction.amount)
+                }
+            }
+            .navigationTitle("Report")
+            .navigationBarTitleDisplayMode(.inline)
+            //add button to go to settings view
+        }
     }
 }
 
 #Preview {
-    BalanceView()
+    BalanceView(transactionStore: TransactionStore())
 }
