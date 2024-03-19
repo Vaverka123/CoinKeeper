@@ -32,6 +32,9 @@ struct AmountView: View {
                     else if newValue.hasPrefix("0") {
                         self.amount = String(newValue.dropFirst())
                         }
+                    else if newValue.hasPrefix(",") {
+                        self.amount = String(newValue.dropFirst())
+                        }
                     else if newValue.filter({ $0 == "," }).count > 1 {
                         let commaIndex = newValue.lastIndex(of: ",")
                         self.amount = String(newValue[..<commaIndex!]) + String(newValue[newValue.index(after: commaIndex!)...])

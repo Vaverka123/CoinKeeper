@@ -15,6 +15,8 @@ struct TransactionView: View {
     @State private var amount = ""
     @State private var descriptionInput = ""
     
+    @State private var isUnchanged = true
+    
     @ObservedObject var transactionStore: TransactionStore
 
     
@@ -22,11 +24,18 @@ struct TransactionView: View {
         NavigationView {
             List {
                 DateView(date: $date)
+
                 AmountView(amount: $amount)
+                    .onChange(of: amount) { amount, _ in
+                                           updateIsUnchanged()
+                                       }
                 NavigationLink (
                     destination: SelectCategoryView(selectedCategory: $selectedCategory)) {
                         Text("Category: \(selectedCategory)")
                     }
+                    .onChange(of: selectedCategory) { selectedCategory, _ in
+                                       updateIsUnchanged()
+                                   }
                 DescriptionView(descriptionInput: $descriptionInput)
             }
             .navigationTitle("Add transaction")
@@ -45,10 +54,14 @@ struct TransactionView: View {
                     }) {
                         Text("Save")
                     }
+                    .disabled(isUnchanged)
                 }
             }
         }
     }
+    private func updateIsUnchanged() {
+        isUnchanged = amount.isEmpty || selectedCategory.isEmpty
+       }
 }
     
 let transactionStore = TransactionStore()

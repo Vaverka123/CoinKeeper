@@ -13,7 +13,9 @@ struct BalanceView: View {
     @ObservedObject var transactionStore: TransactionStore
  
     var body: some View {
+        
         NavigationView {
+            
             List(transactionStore.transactions) { transaction in
                 HStack() {
                     Text(transaction.date, style: .date)
