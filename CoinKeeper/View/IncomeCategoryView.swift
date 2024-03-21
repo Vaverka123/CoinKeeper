@@ -21,8 +21,8 @@ struct IncomeCategoryView: View {
                 callback: { selected in
                     print ("Selected expense category is: \(selected)"
                         )},
-                categories: ExpenseCategoryModel.allCases.map { $0.rawValue },
-                systemImageNames: ExpenseCategoryModel.allCases.map {
+                categories: IncomeCategoryModel.allCases.map { $0.rawValue },
+                systemImageNames: IncomeCategoryModel.allCases.map {
                         $0.systemImageName
                     }
                 )
