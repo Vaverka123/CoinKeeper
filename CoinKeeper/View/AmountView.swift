@@ -12,7 +12,7 @@ import Combine
 struct AmountView: View {
     
     @Binding var amount: String
-    let amountLineLimit = 11
+    let amountLineLimit = 15
 
     var body: some View {
         VStack(alignment: .leading) {

@@ -11,17 +11,28 @@ import Combine
 struct BalanceView: View {
     
     @ObservedObject var transactionStore: TransactionStore
+    @State private var selectedCategory: String = ""
  
     var body: some View {
+        
+        let surplus = calculateSurplus()
+        
         NavigationView {
-            List {
-                ForEach(groupedTransactions.keys.sorted().reversed(), id: \.self) { key in
-                    Section(header: Text(formatDateSection(key))) {
-                        ForEach(groupedTransactions[key]!.sorted(by: { $0.date > $1.date })) { transaction in
-                            HStack() {
-                                Text(transaction.category)
-                                Spacer()
-                                Text(transaction.amount)
+            VStack {
+                Text("Surplus: \(surplus, specifier: "%.2f")")
+                                         .font(.headline)
+                                         .multilineTextAlignment(.leading)
+                                         .padding()
+                
+                List {
+                    ForEach(groupedTransactions.keys.sorted().reversed(), id: \.self) { key in
+                        Section(header: Text(formatDateSection(key))) {
+                            ForEach(groupedTransactions[key]!.sorted(by: { $0.date > $1.date })) { transaction in
+                                HStack() {
+                                    Text(transaction.category)
+                                    Spacer()
+                                    Text(transaction.amount)
+                                }
                             }
                         }
                     }
@@ -32,13 +43,24 @@ struct BalanceView: View {
             //add button to go to settings view
         }
     }
+
+    
+    
+    
     private var groupedTransactions: [String: [Transaction]] {
-            Dictionary(grouping: transactionStore.transactions) { transaction in
-                "\(transaction.year)/\(transaction.month)/\(transaction.day)"
-            }
+        var groupedTransactions = Dictionary(grouping: transactionStore.transactions) { transaction in
+            "\(transaction.year)/\(transaction.month)/\(transaction.day)"
         }
         
-        private func formatDateSection(_ dateString: String) -> String {
+        for key in groupedTransactions.keys {
+            groupedTransactions[key]?.sort(by: { $0.date > $1.date })
+        }
+        
+        return groupedTransactions
+    }
+    
+    
+    private func formatDateSection(_ dateString: String) -> String {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy/M/d"
             if let date = dateFormatter.date(from: dateString) {
@@ -46,6 +68,19 @@ struct BalanceView: View {
                 return dateFormatter.string(from: date)
             }
             return dateString
+        }
+    
+    private func calculateSurplus() -> Double {
+            var surplus: Double = 0
+            
+            for transaction in transactionStore.transactions {
+                if IncomeCategoryModel(rawValue: transaction.category) != nil  {
+                    surplus += Double(transaction.amount) ?? 0
+                } else if ExpenseCategoryModel(rawValue: transaction.category) != nil {
+                    surplus -= Double(transaction.amount) ?? 0
+                }
+            }
+            return surplus
         }
 }
 
